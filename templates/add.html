@@ -1,0 +1,75 @@
+{% extends 'home.html' %} {% block content %}
+<style>
+    .addsome {
+        display: flex;
+        margin-top: 10%;
+    }
+    
+    .add-inner {
+        text-align: center;
+        padding: 60px 0;
+    }
+    
+    .add-inner {
+        width: 1200px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        border-radius: 40px;
+        overflow: hidden;
+        -webkit-box-shadow: 4px 4px 30px 2px gray;
+        box-shadow: 4px 4px 30px 2px gray;
+    }
+    
+    .add-inner input {
+        width: 1100px;
+        padding: 22px 76px;
+        outline: none;
+        font-size: 18px;
+        border: none;
+    }
+    
+    .add-inner span {
+        width: 40%;
+        padding: 12px;
+        background-color: #000000;
+        color: white;
+        font-size: 16px;
+    }
+</style>
+
+<body>
+    <div class="addsome">
+        <div class="container">
+            <div class="add-inner">
+                <form method="POST" action="/add">
+                    <div>
+                        <div>
+                            <input type="text" name="name" placeholder="Name" autofocus="">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <input class="input" type="text" name="content" placeholder="Text">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input class="input" type="text" name="imageurl" placeholder="Image URL">
+                        </div>
+                    </div>
+                    <button style="margin-top: 1%;">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}
+
+</html>

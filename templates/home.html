@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="icon" href="https://aux.iconspalace.com/uploads/death-star-icon-256.png" type="image/png">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    header {
+        background-color: white;
+        background-size: cover;
+    }
+    
+    .header-links {
+        padding: 11px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    .header-a {
+        display: flex;
+        flex-direction: row;
+        text-align: right;
+        padding-left: 55%;
+    }
+    
+    .header-links img {
+        max-width: 105px;
+        margin-right: auto;
+    }
+    
+    .header-links a {
+        color: black;
+        padding: 15px;
+    }
+    
+    .welcome {
+        background-image: url(https://www.teahub.io/photos/full/33-330640_star-wars-wallpaper-1080.jpg);
+        color: white;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+    
+    .welcome-inner {
+        text-align: center;
+        padding: 220px 0;
+    }
+    
+    .welcome-inner h5 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.5px;
+    }
+    
+    .welcome-inner h1 {
+        font-weight: 900px;
+        font-size: 48px;
+        line-height: 64px;
+    }
+    
+    button {
+        padding: 17px 28px;
+        background-color: white;
+        border: 0px solid;
+        color: black;
+        border-radius: 111.4px;
+        cursor: pointer;
+        outline: none;
+        transition: 1s;
+    }
+    
+    button:hover {
+        background: rgb(0, 0, 0);
+        -webkit-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+        color: white;
+    }
+    
+    .about-inner {
+        text-align: center;
+    }
+    
+    .about-inner h1 {
+        font-size: 36px;
+    }
+    
+    .about-empire {
+        width: 50%;
+    }
+    
+    .about-empire img {
+        width: 105px;
+        height: 105px;
+    }
+    
+    .about-rebels {
+        width: 50%;
+    }
+    
+    .about-rebels img {
+        width: 105px;
+        height: 105px;
+    }
+    
+    .about-text {
+        padding-top: 21.5px;
+    }
+    
+    .about-empire h2 {
+        font-size: 23px;
+    }
+    
+    .about-rebels h2 {
+        font-size: 23px;
+    }
+    
+    .about-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 55px 0 35px;
+    }
+    
+    .about-inner button {
+        padding: 17px 28px;
+        background-color: black;
+        border: none;
+        color: white;
+        border-radius: 111.4px;
+        outline: none;
+    }
+    
+    .about-inner button:hover {
+        color: rgb(0, 0, 0);
+        background: rgb(255, 254, 254);
+        -webkit-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+    }
+    
+    .Lore {
+        background-color: #F8F6F8;
+    }
+    
+    .lore-inner {
+        padding: 105px 0px;
+        margin-top: 20px;
+    }
+    
+    .lore-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    
+    .Lore h2 {
+        font-size: 36px;
+    }
+    
+    .lore-text {
+        padding-right: 60px;
+    }
+    
+    .lore-image {
+        width: 38%;
+    }
+    
+    .lore-inner hr {
+        margin: 105px 0;
+    }
+    
+    .special-lists {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    
+    .works {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, black), color-stop(50%, white));
+        background: -o-linear-gradient(top, black 50%, white 50%);
+        background: linear-gradient(to bottom, black 50%, white 50%);
+    }
+    
+    .works-inner {
+        padding: 100px 0;
+    }
+    
+    .works-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .works-title h1 {
+        font-size: 36px;
+        color: white;
+    }
+    
+    .works-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    
+    .works-item {
+        width: 30%;
+    }
+    
+    .works-item img {
+        width: 350px;
+        height: 300px;
+    }
+    
+    .works-item h2 {
+        font-size: 18px;
+    }
+    
+    .port-button button {
+        padding: 17px 28px;
+        background-color: black;
+        border: none;
+        color: white;
+        border-radius: 111.4px;
+        outline: none;
+    }
+    
+    .port-button button:hover {
+        color: #fff;
+        background: #333;
+        -webkit-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+    }
+    
+    .port {
+        background-color: #F8F6F8;
+    }
+    
+    .port-inner {
+        padding: 100px 0;
+        text-align: center;
+    }
+    
+    .port-inner h1 {
+        font-size: 36px;
+    }
+    
+    .port-inner p {
+        font-size: 18px;
+        color: #999999;
+        margin-bottom: 50px;
+    }
+    
+    .port-images {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin-bottom: 70px;
+    }
+    
+    .port-images img {
+        width: 24%;
+    }
+    
+    .sub-inner {
+        text-align: center;
+        padding: 80px 0;
+    }
+    
+    .sub-input {
+        width: 480px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 auto;
+        border-radius: 40px;
+        overflow: hidden;
+        -webkit-box-shadow: 4px 4px 30px 2px gray;
+        box-shadow: 4px 4px 30px 2px gray;
+    }
+    
+    .sub-inner h1 {
+        font-size: 26px;
+        color: black;
+        text-align: center;
+    }
+    
+    .sub-inner p {
+        font-size: 18px;
+        color: #999999;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .sub-input input {
+        width: 60%;
+        padding: 12px 36px;
+        outline: none;
+        font-size: 18px;
+        border: none;
+    }
+    
+    .sub-input span {
+        width: 40%;
+        padding: 12px;
+        background-color: #000000;
+        color: white;
+        font-size: 16px;
+    }
+    
+    .footer {
+        background-color: #e0e0e0;
+    }
+    
+    .footer-content {
+        padding: 70px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    
+    .footer-title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .footer-item {
+        padding: 9px 0;
+    }
+    
+    .footer-item a {
+        color: #999999;
+    }
+    
+    .footer-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .footer-l {
+        padding: 30px 0;
+        text-align: center;
+        border-top: 1px solid #999999;
+    }
+    
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90vh;
+        display: none;
+    }
+    
+    .modal-close {
+        height: 10vh;
+        background-color: white;
+        text-align: right;
+    }
+    
+    @media (max-width:700px) {
+        .container {
+            width: auto;
+            margin: 0 10px;
+        }
+        .header {
+            display: none;
+            width: auto;
+            margin: 0 10px;
+        }
+        .welcome-inner h1 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+        .welcome-inner {
+            padding: 120px 0;
+        }
+        .about-inner h1 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        .about-inner p {
+            font-size: 14px;
+        }
+        .about-empire {
+            display: block;
+            width: 100%;
+        }
+        .about-rebels {
+            display: block;
+            width: 100%;
+            margin-bottom: 36px;
+        }
+        .lore-info {
+            display: block;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .lore-image {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .special-list {
+            width: 40%;
+        }
+        .works-item {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width:600px) {
+        .container {
+            width: auto;
+            margin: 0 10px;
+        }
+        .header {
+            width: auto;
+            margin: 0 10px;
+        }
+        .header-links {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .header-links img {
+            margin: auto;
+        }
+        .header-a {
+            margin-top: 10px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+
+            <div class="header-links">
+                <a href="{{ url_for('home') }}" class="navbar-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lucasfilm_logo.svg/2560px-Lucasfilm_logo.svg.png" alt="LUCASFILM"></a>
+                <div class="header-a">
+                    {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('add') }}" class="navbar-item">
+                                Suggest
+                            </a> {% endif %} {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('posts') }}" class="navbar-item">
+                                Posts
+                            </a> {% endif %} {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('profile') }}" class="navbar-item">
+                                Profile
+                            </a> {% endif %} {% if not current_user.is_authenticated %}
+                    <a href="{{ url_for('login') }}" class="navbar-item">
+                                Login
+                            </a>
+                    <a href="{{ url_for('signup') }}" class="navbar-item">
+                                Sign Up
+                            </a> {% endif %} {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('logout') }}" class="navbar-item">
+                                Logout
+                            </a> {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    <!-- Начало -->
+    <section class="welcome" id="welcome">
+        <div class="container">
+            <div class="welcome-inner">
+                <h5>LUCASFILM</h5>
+                <h1>STAR WARS MARATHON</h1>
+                <button>
+                Смотреть
+            </button>
+            </div>
+        </div>
+    </section>
+    <!-- Середина -->
+    <section class="about">
+        <div class="container">
+            <div class="about-inner">
+                <h1>Враждующие стороны</h1>
+                <p></p>
+                <div class="about-list">
+                    <div class="about-empire">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Emblem_of_the_First_Galactic_Empire.svg/1200px-Emblem_of_the_First_Galactic_Empire.svg.png" alt="Galactic Empire" />
+                        <span class="about-text">
+                        <h2>Галактическая Империя</h2>
+                        <p>Галактическая Империя, провозглашенная Первой Галактической Империей, обычно называемая
+                            просто Империей и известная как Старая Империя, была галактическим
+                            правительством, которое заменило Галактическую Республику после войн клонов и привело
+                            цивилизацию к новой возраст. Империя, также известная как Новый порядок, была основана и
+                            управлялась галактическим императором Шивом Палпатином.
+                        </p>
+                    </span>
+                    </div>
+                    <div class="about-rebels">
+                        <img src="https://seeklogo.com/images/J/Jedi_Order-logo-9FC4769C44-seeklogo.com.png" alt="Rebels" />
+                        <span class="about-text">
+                        <h2>Сопротивление</h2>
+                        <p> Сопротивление было частной военной силой, которая выступала против Первого Ордена и
+                            защищала Новую Республику.
+                            <br>Сопротивление было осколком Сил обороны Новой Республики,
+                            которые считали, что Первый Орден представляет серьезную угрозу Новой Республике и
+                            демократии в галактике,<br> в отличие от Сената Новой Республики и Верховного
+                            командования.
+                        </p>
+                    </span>
+                    </div>
+                </div>
+                <button id="about-button">Подробнее</button>
+            </div>
+        </div>
+    </section>
+    <!-- Лор -->
+    <section class="Lore" id="Lore">
+        <div class="container">
+            <div class="lore-inner">
+                <div class="lore-info">
+                    <div class="lore-text">
+                        <h2>Штурмовики Империи</h2>
+                        <p>Штурмовики были элитными воинами Галактической Империи. Как звёздные разрушители типа «Имперский» и TIE истребители, они являлись олицетворением абсолютной власти Императора Палпатина.
+                        </p>
+                    </div>
+                    <div class="lore-image">
+                        <img src="https://scontent.fguw1-1.fna.fbcdn.net/v/t39.30808-6/293044078_460484679415679_4082899533162126442_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=95aMFhu_LLAAX9BWvSw&_nc_ht=scontent.fguw1-1.fna&oh=00_AfCFstw49ADjv7WyZa92TPQ2TCKp5vuMgewUALqUS4SGSA&oe=636FCB85"
+                            alt="" width="530px" height="350px">
+                    </div>
+                </div>
+                <hr>
+                <div class="special-lists">
+                    <div class="special-list">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Emblem_of_the_First_Galactic_Empire.svg/1200px-Emblem_of_the_First_Galactic_Empire.svg.png" alt="" width="50px" height="50px">
+                    </div>
+                    <div class="special-list">
+                        <img src="https://w7.pngwing.com/pngs/29/684/png-transparent-stormtrooper-boba-fett-star-wars-original-trilogy-helmet-stormtrooper-star-wars-episode-vii-sports-equipment-motorcycle-helmet.png" alt="" width="50px" height="50px">
+                    </div>
+                    <div class="special-list">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Emblem_of_the_First_Galactic_Empire.svg/1200px-Emblem_of_the_First_Galactic_Empire.svg.png" alt="" width="50px" height="50px">
+                    </div>
+                    <div class="special-list">
+                        <img src="https://www.clipartmax.com/png/middle/452-4524817_star-wars-stormtrooper-helmet-stormtrooper-helmet-transparent-background.png" alt="" width="50px" height="50px">
+                    </div>
+                    <div class="special-list">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Emblem_of_the_First_Galactic_Empire.svg/1200px-Emblem_of_the_First_Galactic_Empire.svg.png" alt="" width="50px" height="50px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Хронология -->
+    <section class="works" id="works">
+        <div class="container">
+            <div class="works-inner">
+                <div class="works-title">
+                    <h1>Краткая хронология фильмов и <br> сериалов «Звёздных войн»</h1>
+                    <div class="works-button">
+                        <button>Подробнее</button>
+                    </div>
+                </div>
+                <div class="works-list">
+                    <div class="works-item">
+                        <img src="https://www.soyuz.ru/public/uploads/files/6/7059170/201705231308408dd4bc0367.jpg">
+                        <h2>Фильмы</h2>
+                        <p>Киноэпопея «Звёздные войны» — события вселенной, изложенные в полнометражных фильмах.</p>
+                        <a href="">Смотреть</a>
+                    </div>
+                    <div class="works-item">
+                        <img src="https://resizer.mail.ru/p/826168b1-9b08-5da1-8f6b-efc2ed0befcc/AQACPStrNVHRDHy0dSp1Ebm5c9Sw7U33RD9TSx7Jg5u09oGkAgkb3vHkE1W8vT7oUqE1-eCKZJPrPv3xKEtPSOsm4PE.jpg">
+                        <h2>Сериалы</h2>
+                        <p>Лукас также вообразил создание дополнительных фильмов, не связанных с сагой Скайуокеров</p>
+                        <a href="">Смотреть</a>
+                    </div>
+                    <div class="works-item">
+                        <img src="https://avatars.mds.yandex.net/get-kino-vod-films-gallery/33804/dc9ee3d8b040c8c1e57676d16b9135ef/280x178_2">
+                        <h2>Мультсериалы</h2>
+                        <p>Сериалы от Lucasfilm Animation погружает зрителей в атмосферу приключений в мире Звездных Войн
+                        </p>
+                        <a href="">Смотреть</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="port">
+        <div class="container">
+            <div class="port-inner">
+                <h1>Игры</h1>
+                <hr>
+                <p>В далёкой галактике вас ждут приключения героев и злодеев из вселенной «Звёздных войн»™. Овладейте искусством боя на звёздном истребителе и почувствуйте себя настоящим пилотом в Star Wars™: Squadrons. В игре «Звёздные Войны Джедаи: Павший
+                    Орден»™ вам предстоит собрать воедино осколки прошлого, чтобы завершить обучение и стать джедаем после вступления в силу Приказа 66. Отточите навыки своего героя в Star Wars Battlefront™ II и участвуйте в масштабных сражениях в легендарных
+                    местах всех трёх кинематографических эпох.</p>
+                <div class="port-images">
+                    <img src="https://u.kanobu.ru/editor/images/86/b3776330-f335-4850-9564-ce452b5a8221.jpg" alt="" width="255" height="255">
+                    <img src="https://mobimg.b-cdn.net/v2/fetch/8b/8b0aab277cd1c69f25ec10bc9bb4da36.jpeg?w=1000" alt="" width="255" height="255">
+                    <img src="https://assets.gq.ru/photos/5f83fb99e14c4fa93928739e/4:3/w_708,h_531,c_limit/08.jpg" alt="" width="255" height="255">
+                    <img src="https://wpapers.ru/wallpapers/films/11397/1152x864_%D0%97%D0%B2%D1%91%D0%B7%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B9%D0%BD%D1%8B---%D1%81%D0%BE%D0%BB%D0%B4%D0%B0%D1%82-%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8.jpg" alt=""
+                        width="255" height="255">
+                </div>
+                <div class="port-button"><button>Все игры</button></div>
+            </div>
+        </div>
+    </section>
+    <!-- Подписка -->
+    <section class="sub">
+        <div class="container">
+            <div class="sub-inner">
+                <h1>Получите недельную подписку за регистрацию</h1>
+                <p>Обзоры,трейлеры,сериалы,премьеры - получите все это сейчас</p>
+                <div class="sub-input">
+                    <input type="text" placeholder="Введите e-mail">
+                    <span>Подтвердить</span>
+                </div>
+                <p>Мы не шлем спам, и никому не передаем ваши данные.</p>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <div class="footer-title">
+                            Контактная информация
+                        </div>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Кто мы такие?</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">88005553535</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Новости и блог</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-title">
+                            Карьера
+                        </div>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Lucasfilm Animation</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">ILM, LAB</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Академия Джедаев</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-title">
+                            Что мы делаем
+                        </div>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Фильмы</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Фигурки, книги и прочее</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#">Визуальные эффекты</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-l">
+                    (c) 2022 . Все права защищены
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}
+
+</html>

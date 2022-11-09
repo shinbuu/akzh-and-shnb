@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form method="POST" action="/edit">
+            <input type=hidden value="{{ post_id }}" name="post_id"/>
+            <div>
+                <div>
+                    <input type="text" name="name" value="{{name}}">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <input class="input is-large" type="text" name="content" value="{{content}}">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input class="input is-large" type="text" name="imageurl"  value="{{image}}">
+                </div>
+            </div>
+            <button>Submit</button>
+        </form>
+</body>
+</html>
